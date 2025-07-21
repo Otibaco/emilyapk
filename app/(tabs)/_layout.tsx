@@ -33,10 +33,10 @@ export default function TabLayout() {
                     backgroundColor: "#2ecc71",
                     justifyContent: "center",
                     alignItems: "center",
-                    marginBottom: 20, // lifts the icon a bit
+                    marginBottom: 25, // lifts the icon a bit
                   }}
                 >
-                  <Ionicons name="add" size={28} color="white" />
+                  <Ionicons name="add" size={28} color="white"  />
                 </View>
               );
             case "messages":
