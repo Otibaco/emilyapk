@@ -1,10 +1,9 @@
-// screens/HomeScreen.tsx
 import { View, Text } from "react-native";
 
 export default function MessagesScreen() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Messages Screen</Text>
+    <View className="flex-1 items-center justify-center">
+      <Text className="text-lg">Messages Screen</Text>
     </View>
   );
 }

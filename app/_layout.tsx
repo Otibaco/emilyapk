@@ -1,11 +1,14 @@
 import { Stack } from "expo-router";
+import { TailwindProvider } from "tailwindcss-react-native";
 
 export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false, // <--- THIS removes the (tabs) app bar at the top
-      }}
-    />
+    <TailwindProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      />
+    </TailwindProvider>
   );
 }
