@@ -1,7 +1,7 @@
 // app/tabs/_layout.tsx
 import { Tabs } from "expo-router";
 import { Ionicons, Feather } from "@expo/vector-icons";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 
 export default function TabLayout() {

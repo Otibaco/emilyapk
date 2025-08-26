@@ -1,10 +1,9 @@
 // screens/HomeScreen.tsx
-import { View, Text } from "react-native";
+import { Text, View } from "react-native";
 
 export default function ProfileScreen() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Profile Screen</Text>
+<View className="flex-1 items-center justify-center">      <Text>Profile Screen</Text>
     </View>
   );
 }
