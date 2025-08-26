@@ -1,5 +1,9 @@
-import ProfileScreen from "@/screens/ProfileScreen";
+import { Text, View } from "react-native";
 
 export default function ProfileTab() {
-  return <ProfileScreen />;
+  return (
+    <View>
+      <Text>Profile Tab</Text>
+    </View>
+  );
 }

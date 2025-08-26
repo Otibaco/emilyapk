@@ -1,5 +1,9 @@
-import MessagesScreen from "@/screens/MessagesScreen";
+import { Text, View } from "react-native";
 
 export default function MessagesTab() {
-  return <MessagesScreen />;
+  return (
+    <View>
+      <Text>Messages Tab</Text>
+    </View>
+  );
 }

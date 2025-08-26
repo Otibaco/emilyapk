@@ -1,5 +1,9 @@
-import SearchScreen from "@/screens/SearchScreen";
+import { Text, View } from "react-native";
 
 export default function SearchTab() {
-  return <SearchScreen />;
+  return (
+    <View>
+      <Text>Search Tab</Text>
+    </View>
+  );
 }
