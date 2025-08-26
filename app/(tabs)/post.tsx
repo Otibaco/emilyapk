@@ -1,5 +1,9 @@
-import PostScreen from "@/screens/PostScreen";
+import { Text, View } from "react-native";
 
 export default function PostTab() {
-  return <PostScreen />;
+  return (
+    <View>
+      <Text>Post Tab</Text>
+    </View>
+  );
 }

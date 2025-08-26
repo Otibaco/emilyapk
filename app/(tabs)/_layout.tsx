@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 
-const _Layout = () => {
+
+export default function _Layout() {
   return (
     <Tabs>
       <Tabs.Screen
@@ -35,4 +36,7 @@ const _Layout = () => {
         }} />
     </Tabs>
   )
+
 }
+
+ 

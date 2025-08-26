@@ -1,6 +1,11 @@
 // app/tabs/home.tsx
-import HomeScreen from "@/screens/HomeScreen";
+
+import { Text, View } from "react-native";
 
 export default function HomeTab() {
-  return <HomeScreen />;
+  return (
+    <View>
+      <Text>Home Tab</Text>
+    </View>
+  );
 }
