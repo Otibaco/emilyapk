@@ -3,10 +3,17 @@ import "./globals.css"
 
 export default function RootLayout() {
   return (
-    <Stack.Screen
-      name="(tabs)"
-      
-      options={{ headerShown: false }}
-    />)
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="category"
+        options={{ headerShown: false }}
+      />
+    </Stack>
+
+  )
 
 }
