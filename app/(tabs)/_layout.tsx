@@ -38,11 +38,11 @@ export default function TabLayout() {
         },
       })}
     >
-      <Tabs.Screen name="home" options={{ title: "Home" }} />
-      <Tabs.Screen name="search" options={{ title: "Search" }} />
-      <Tabs.Screen name="post" options={{ title: "Post" }} />
-      <Tabs.Screen name="messages" options={{ title: "Messages" }} />
-      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+      <Tabs.Screen name="home" options={{ title: "Home" , headerShown: false }} />
+      <Tabs.Screen name="search" options={{ title: "Search" , headerShown: false }} />
+      <Tabs.Screen name="post" options={{ title: "Post" , headerShown: false }} />
+      <Tabs.Screen name="messages" options={{ title: "Messages" , headerShown: false }} />
+      <Tabs.Screen name="profile" options={{ title: "Profile" , headerShown: false }} />
     </Tabs>
   );
 }
