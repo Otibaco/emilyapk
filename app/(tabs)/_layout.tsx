@@ -24,18 +24,8 @@ export default function TabLayout() {
               return <Feather name="search" size={size} color={color} />;
             case "post":
               return (
-                <View
-                  style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 25,
-                    backgroundColor: "#2ecc71",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 25, // lifts the icon a bit
-                  }}
-                >
-                  <Ionicons name="add" size={28} color="white"  />
+                <View className="w-[50px] h-[50px] rounded-full bg-green-500 justify-center items-center mb-[25px]"              >
+                  <Ionicons name="add" size={28} color="white" />
                 </View>
               );
             case "messages":
