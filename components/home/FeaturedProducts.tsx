@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { theme } from '../../styles/theme';
-import ProductCard from '../common/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 const FeaturedProducts: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState([

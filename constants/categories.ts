@@ -19,6 +19,7 @@ export interface Category {
   subcategories: SubCategory[];
   image: string;
   href: string;
+  description: string; // <-- Added
 }
 export const categories: Category[] = [
   {
@@ -26,6 +27,7 @@ export const categories: Category[] = [
     slug: "trending",
     name: "Trending",
     icon: MaterialCommunityIcons, // Use with name="trending-up"
+    description: "Discover the most popular and trending products in agriculture.",
     subcategories: [
       {
         id: "others",
@@ -45,6 +47,7 @@ export const categories: Category[] = [
     name: "Livestock & Pets",
     slug: "livestock-pets",
     icon: FontAwesome5, // Use with name="cow"
+    description: "Find a wide range of livestock and pets for farming and companionship.",
     subcategories: [
       { id: "cattle", name: "Cattle", description: "Beef and dairy cattle", productCount: 78, image: "/farm-animals/cows.png", categoryName: "livestock-pets", subcategorySlug: "cattle" },
       { id: "poultry", name: "Poultry", description: "Chickens, ducks, and more", productCount: 234, image: "/farm-animals/chickens.png", categoryName: "livestock-pets", subcategorySlug: "poultry" },
@@ -61,6 +64,7 @@ export const categories: Category[] = [
     name: "Services",
     slug: "agro-services",
     icon: MaterialIcons, // Use with name="miscellaneous-services"
+    description: "Professional agricultural services to support your farm operations.",
     subcategories: [
       { id: "tractor-hiring", name: "Tractor Hiring", description: "Affordable tractor rentals", productCount: 6, image: "/services/tractor.png", categoryName: "agro-services", subcategorySlug: "tractor-hiring" },
       { id: "farm-setup", name: "Farm Setup", description: "Complete farm setup services", productCount: 8, image: "/services/farm.png", categoryName: "agro-services", subcategorySlug: "farm-setup" },
@@ -74,6 +78,7 @@ export const categories: Category[] = [
     name: "Agro Insurance",
     slug: "agro-insurance",
     icon: MaterialCommunityIcons, // Use with name="shield-check"
+    description: "Protect your farm, crops, and livestock with comprehensive insurance options.",
     subcategories: [
       { id: "crop-insurance", name: "Crop Insurance", description: "Protect your crops", productCount: 3, image: "/insurance/crop.png", categoryName: "agro-insurance", subcategorySlug: "crop-insurance" },
       { id: "livestock-insurance", name: "Livestock Insurance", description: "Protect your livestock", productCount: 2, image: "/insurance/livestock.png", categoryName: "agro-insurance", subcategorySlug: "livestock-insurance" },
@@ -88,6 +93,7 @@ export const categories: Category[] = [
     name: "Tractor / Farm Machines",
     slug: "equipments",
     icon: MaterialCommunityIcons, // Use with name="tractor"
+    description: "Browse tractors and farm machinery for efficient agricultural production.",
     subcategories: [
       { id: "tractor", name: "Tractor", description: "Farm tractors", productCount: 12, image: "/equipment/tractor.png", categoryName: "equipments", subcategorySlug: "tractor" },
       { id: "sheller", name: "Sheller", description: "Crop shellers", productCount: 5, image: "/equipment/sheller.png", categoryName: "equipments", subcategorySlug: "sheller" },
@@ -104,6 +110,7 @@ export const categories: Category[] = [
     name: "Animal Mating",
     slug: "animal-mating",
     icon: MaterialCommunityIcons, // Use with name="heart"
+    description: "Animal mating and breeding services for livestock and pets.",
     subcategories: [
       { id: "dog", name: "Dog", description: "Dog mating services", productCount: 3, image: "/mating/dog.png", categoryName: "animal-mating", subcategorySlug: "dog" },
       { id: "goat", name: "Goat", description: "Goat mating services", productCount: 2, image: "/mating/goat.png", categoryName: "animal-mating", subcategorySlug: "goat" },
@@ -119,6 +126,7 @@ export const categories: Category[] = [
     name: "Agro Chemicals / Pesticides",
     slug: "agro-chemicals",
     icon: MaterialCommunityIcons, // Use with name="sprout"
+    description: "Agro chemicals and pesticides for crop protection and yield improvement.",
     subcategories: [
       { id: "herbicide", name: "Herbicide", description: "Weed control products", productCount: 10, image: "/chemicals/herbicide.png", categoryName: "agro-chemicals", subcategorySlug: "herbicide" },
       { id: "pesticide", name: "Pesticide", description: "Pest control products", productCount: 9, image: "/chemicals/pesticide.png", categoryName: "agro-chemicals", subcategorySlug: "pesticide" },
@@ -132,6 +140,7 @@ export const categories: Category[] = [
     name: "Food / Fruits & Vegetables",
     slug: "food-fruits-vegetable",
     icon: MaterialCommunityIcons, // Use with name="food-apple"
+    description: "Fresh food, fruits, and vegetables directly from the farm.",
     subcategories: [
       { id: "fresh-fruits", name: "Fresh Fruits", description: "Seasonal fresh fruits", productCount: 89, image: "/fruits/fresh.png", categoryName: "food-fruits-vegetable", subcategorySlug: "fresh-fruits" },
       { id: "vegetables", name: "Vegetables", description: "Farm-fresh vegetables", productCount: 156, image: "/fruits/vegetables.png", categoryName: "food-fruits-vegetable", subcategorySlug: "vegetables" },
@@ -146,6 +155,7 @@ export const categories: Category[] = [
     name: "Seedlings",
     slug: "seedlings",
     icon: MaterialCommunityIcons, // Use with name="leaf"
+    description: "High-quality seedlings for crop establishment and growth.",
     subcategories: [
       { id: "maize", name: "Maize", description: "Maize seedlings", productCount: 20, image: "/seedlings/maize.png", categoryName: "seedlings", subcategorySlug: "maize" },
       { id: "soybean", name: "Soybean", description: "Soybean seedlings", productCount: 15, image: "/seedlings/soybean.png", categoryName: "seedlings", subcategorySlug: "soybean" },
@@ -161,6 +171,7 @@ export const categories: Category[] = [
     name: "Horticulture / Ornamental Crops",
     slug: "ornamentals",
     icon: MaterialCommunityIcons, // Use with name="flower"
+    description: "Ornamental crops and horticulture plants for beautification and landscaping.",
     subcategories: [
       { id: "flowers", name: "Flowers", description: "Flowering plants", productCount: 6, image: "/ornamentals/flowers.png", categoryName: "ornamentals", subcategorySlug: "flowers" },
       { id: "shrubs", name: "Shrubs", description: "Shrub plants", productCount: 4, image: "/ornamentals/shrubs.png", categoryName: "ornamentals", subcategorySlug: "shrubs" },
@@ -175,6 +186,7 @@ export const categories: Category[] = [
     name: "Animal Loan",
     slug: "animal-loan",
     icon: MaterialCommunityIcons, // Use with name="cash"
+    description: "Financial support and loans for animal farming and related needs.",
     subcategories: [
       { id: "veterinary-loan", name: "Veterinary Loan", description: "Loans for veterinary care", productCount: 3, image: "/loans/vet.png", categoryName: "animal-loan", subcategorySlug: "veterinary-loan" },
       { id: "feed-subsidy", name: "Feed Subsidy", description: "Animal feed subsidy programs", productCount: 2, image: "/loans/feed.png", categoryName: "animal-loan", subcategorySlug: "feed-subsidy" },
@@ -190,6 +202,7 @@ export const categories: Category[] = [
     name: "Fertilizers",
     slug: "fertilizers",
     icon: MaterialCommunityIcons, // Use with name="package-variant"
+    description: "Fertilizers and soil conditioners for healthy crop growth.",
     subcategories: [
       { id: "npk", name: "NPK", description: "NPK fertilizer", productCount: 8, image: "/fertilizers/npk.png", categoryName: "fertilizers", subcategorySlug: "npk" },
       { id: "urea", name: "Urea", description: "Urea fertilizer", productCount: 7, image: "/fertilizers/urea.png", categoryName: "fertilizers", subcategorySlug: "urea" },
@@ -205,6 +218,7 @@ export const categories: Category[] = [
     name: "Animal Feed",
     slug: "animal-feed",
     icon: MaterialCommunityIcons, // Use with name="food-drumstick"
+    description: "Animal feed and supplements for healthy livestock nutrition.",
     subcategories: [
       { id: "preventive", name: "Preventive", description: "Preventive feed additives", productCount: 2, image: "/feed/preventive.png", categoryName: "animal-feed", subcategorySlug: "preventive" },
       { id: "curative", name: "Curative", description: "Curative feed solutions", productCount: 2, image: "/feed/curative.png", categoryName: "animal-feed", subcategorySlug: "curative" },
@@ -221,6 +235,7 @@ export const categories: Category[] = [
     name: "Animal Pharmacy",
     slug: "animal-pharmacy",
     icon: MaterialCommunityIcons, // Use with name="pill"
+    description: "Animal pharmacy products for livestock health and wellness.",
     subcategories: [
       { id: "preventive", name: "Preventive", description: "Preventive medicines", productCount: 2, image: "/pharmacy/preventive.png", categoryName: "animal-pharmacy", subcategorySlug: "preventive" },
       { id: "curative", name: "Curative", description: "Curative medicines", productCount: 2, image: "/pharmacy/curative.png", categoryName: "animal-pharmacy", subcategorySlug: "curative" },
@@ -237,6 +252,7 @@ export const categories: Category[] = [
     name: "Animal Accessories",
     slug: "animal-accessories",
     icon: MaterialCommunityIcons, // Use with name="gamepad-variant"
+    description: "Accessories and equipment for animal care and management.",
     subcategories: [
       { id: "drinkers", name: "Drinkers", description: "Animal water drinkers", productCount: 3, image: "/accessories/drinkers.png", categoryName: "animal-accessories", subcategorySlug: "drinkers" },
       { id: "cages", name: "Cages", description: "Animal cages", productCount: 4, image: "/accessories/cages.png", categoryName: "animal-accessories", subcategorySlug: "cages" },
@@ -244,7 +260,7 @@ export const categories: Category[] = [
       { id: "transporting", name: "Transporting", description: "Animal transporting tools", productCount: 2, image: "/accessories/transport.png", categoryName: "animal-accessories", subcategorySlug: "transporting" },
       { id: "housing", name: "Housing", description: "Animal housing structures", productCount: 3, image: "/accessories/housing.png", categoryName: "animal-accessories", subcategorySlug: "housing" },
     ],
-     image: "/icons/15.jpg",
+    image: "/icons/15.jpg",
     href: "/category/animal-accessories",
   }
 ]

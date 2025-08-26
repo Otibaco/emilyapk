@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import { theme } from '../../styles/theme';
-import CategoryCard from '../common/CategoryCard';
+import CategoryCard from '../CategoryCard/CategoryCard';
 
 const CategoriesGrid: React.FC = () => {
   const categories = [
