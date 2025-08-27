@@ -20,7 +20,7 @@ interface HomeScreenProps {
 
 export default function HomeScreen({ navigation }: HomeScreenProps) {
   const {
-    products,
+    // products,
     featuredProducts,
     setProducts,
     setFeaturedProducts,

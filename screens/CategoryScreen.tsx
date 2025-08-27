@@ -19,7 +19,7 @@ interface CategoryScreenProps {
 
 export default function CategoryScreen({ route, navigation }: CategoryScreenProps) {
   const { category }: { category: Category } = route.params;
-  const { products, setProducts } = useStore();
+  const { setProducts } = useStore();
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [filteredProducts, setFilteredProducts] = useState(mockProducts);
 
