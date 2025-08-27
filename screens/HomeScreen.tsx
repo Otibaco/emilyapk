@@ -11,13 +11,13 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import ProductCard from '@/components/product-card/ProductCard';
 import CategoriesGrid from '@/components/categories-grid/CategoriesGrid';
-import { Category } from '@/constants/categories';
 import { mockProducts } from '@/data/mockData';
+import { CategoryListItem } from '@/constants/CategoryList';
 
 export default function HomeScreen() {
-  const handleCategoryPress = (category: Category) => {
-    console.log("Category pressed:", category.name);
-  };
+ const handleCategoryPress = (category: CategoryListItem) => {
+  console.log("Category pressed:", category.name);
+};
 
   const handleViewDetails = (product: any) => {
     console.log("View details for:", product.title);

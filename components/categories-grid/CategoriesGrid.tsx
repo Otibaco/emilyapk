@@ -29,7 +29,7 @@ export default function CategoriesGrid({ onCategoryPress }: CategoriesGridProps)
           resizeMode="cover"
           className="h-32 w-full"
         />
-        <View className="p-3">
+        <View className="hidden p-3">
           <Text className="text-lg font-semibold text-gray-900">
             {item.name}
           </Text>
