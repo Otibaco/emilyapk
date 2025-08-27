@@ -22,12 +22,12 @@ export default function CategoriesGrid({ onCategoryPress }: CategoriesGridProps)
       <TouchableOpacity
         onPress={() => handleCategoryPress(item)}
         activeOpacity={0.85}
-        className="flex-1 m-2 h-56 rounded-2xl overflow-hidden shadow-md bg-white"
+        className="flex-1 m-2 h-56 p-2 rounded-2xl overflow-hidden shadow-md bg-white"
       >
         <Image
           source={{ uri: item.image }}
           resizeMode="cover"
-          className="h-32 w-full"
+          className="h-full w-full"
         />
         <View className="hidden p-3">
           <Text className="text-lg font-semibold text-gray-900">
