@@ -1,9 +1,112 @@
-// screens/HomeScreen.tsx
-import { Text, View } from "react-native";
+// screens/SearchScreen.tsx
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+  SafeAreaView,
+} from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+import ProductCard from '@/components/product-card/ProductCard';
+import { mockProducts } from '@/data/mockData';
 
-export default function SearchScreen() {
-  return (
-<View className="flex-1 items-center justify-center">      <Text>Search Screen</Text>
+interface SearchScreenProps {
+  navigation: any;
+}
+
+export default function SearchScreen({ navigation }: SearchScreenProps) {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState(mockProducts);
+  // const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    // setIsSearching(true);
+
+    if (query.trim() === '') {
+      setSearchResults(mockProducts);
+    } else {
+      const filtered = mockProducts.filter(product =>
+        product.title.toLowerCase().includes(query.toLowerCase()) ||
+        product.description.toLowerCase().includes(query.toLowerCase()) ||
+        product.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+      );
+      setSearchResults(filtered);
+    }
+
+    // setIsSearching(false);
+  };
+
+  const handleViewDetails = (product: any) => {
+    navigation.navigate('ProductDetails', { product });
+  };
+
+  const handleContactSeller = (product: any) => {
+    navigation.navigate('Chat', { product });
+  };
+
+  const renderProduct = ({ item }: { item: any }) => (
+    <View className="mb-4 flex-1">
+      <ProductCard
+        product={item}
+        onViewDetails={handleViewDetails}
+        onContactSeller={handleContactSeller}
+      />
     </View>
+  );
+
+  return (
+    <SafeAreaView className="flex-1 bg-gray-50">
+      {/* Search Header */}
+      <View className="bg-white px-4 py-3 border-b border-gray-200">
+        <View className="flex-row items-center bg-gray-100 px-3 py-2 rounded-lg">
+          <MaterialIcons name="search" size={20} color="#6B7280" />
+          <TextInput
+            className="flex-1 ml-2 text-base text-gray-900"
+            placeholder="Search products, categories..."
+            value={searchQuery}
+            onChangeText={handleSearch}
+            autoFocus
+          />
+          {searchQuery.length > 0 && (
+            <TouchableOpacity onPress={() => handleSearch('')}>
+              <MaterialIcons name="clear" size={20} color="#6B7280" />
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+
+      {/* Search Results */}
+      <View className="px-4 py-3 bg-white border-b border-gray-200">
+        <Text className="text-sm text-gray-500">
+          {searchResults.length} results found
+          {searchQuery ? ` for "${searchQuery}"` : ''}
+        </Text>
+      </View>
+
+      {/* Products Grid */}
+      <FlatList
+        data={searchResults}
+        renderItem={renderProduct}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ padding: 16 }}
+        columnWrapperStyle={{ justifyContent: 'space-between' }}
+        ListEmptyComponent={
+          <View className="flex-1 items-center justify-center py-16">
+            <MaterialIcons name="search-off" size={64} color="#9CA3AF" />
+            <Text className="text-lg font-semibold text-gray-700 mt-4 mb-2">
+              No products found
+            </Text>
+            <Text className="text-sm text-gray-500 text-center px-8">
+              Try adjusting your search terms or browse categories
+            </Text>
+          </View>
+        }
+      />
+    </SafeAreaView>
   );
 }
