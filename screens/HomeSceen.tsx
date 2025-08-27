@@ -1,5 +1,4 @@
-// screens/HomeScreen.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -9,26 +8,45 @@ import {
   FlatList,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useStore } from '@/store/useStore';
+import { mockProducts } from '@/data/mockData';
+import { Category } from '@/constants/categories';
 import ProductCard from '@/components/product-card/ProductCard';
 import CategoriesGrid from '@/components/categories-grid/CategoriesGrid';
-import { Category } from '@/constants/categories';
-import { mockProducts } from '@/data/mockData';
 
+// interface HomeScreenProps {
+//   navigation: any;
+// }
+
+// export default function HomeScreen({ navigation }: HomeScreenProps) {
 export default function HomeScreen() {
+  const {
+    // products,
+    featuredProducts,
+    setProducts,
+    setFeaturedProducts,
+  } = useStore();
+
+  useEffect(() => {
+    // Load mock data
+    setProducts(mockProducts);
+    setFeaturedProducts(mockProducts.slice(0, 4));
+  }, [setProducts, setFeaturedProducts]);
+
   const handleCategoryPress = (category: Category) => {
-    console.log("Category pressed:", category.name);
+    // navigation.navigate('CategoryScreen', { category });
   };
 
   const handleViewDetails = (product: any) => {
-    console.log("View details for:", product.title);
+    // navigation.navigate('ProductDetails', { product });
   };
 
   const handleContactSeller = (product: any) => {
-    console.log("Contact seller for:", product.title);
+    // navigation.navigate('Chat', { product });
   };
 
   const handleSearchPress = () => {
-    console.log("Navigate to search screen");
+    // navigation.navigate('Search');
   };
 
   const renderFeaturedProduct = ({ item }: { item: any }) => (
@@ -72,19 +90,19 @@ export default function HomeScreen() {
         {/* Quick Stats */}
         <View className="flex-row px-4 mb-6 space-x-3">
           <View className="flex-1 bg-white p-4 rounded-xl items-center shadow-sm">
-            <Text className="text-lg font-bold text-green-600 mb-1">1,234</Text>
+            <Text className="text-lg font-bold text-indigo-600 mb-1">1,234</Text>
             <Text className="text-xs text-gray-500 text-center">
               Active Products
             </Text>
           </View>
           <View className="flex-1 bg-white p-4 rounded-xl items-center shadow-sm">
-            <Text className="text-lg font-bold text-green-600 mb-1">567</Text>
+            <Text className="text-lg font-bold text-indigo-600 mb-1">567</Text>
             <Text className="text-xs text-gray-500 text-center">
               Verified Sellers
             </Text>
           </View>
           <View className="flex-1 bg-white p-4 rounded-xl items-center shadow-sm">
-            <Text className="text-lg font-bold text-green-600 mb-1">89</Text>
+            <Text className="text-lg font-bold text-indigo-600 mb-1">89</Text>
             <Text className="text-xs text-gray-500 text-center">
               Categories
             </Text>
@@ -98,14 +116,14 @@ export default function HomeScreen() {
               Featured Products
             </Text>
             <TouchableOpacity>
-              <Text className="text-sm font-semibold text-green-600">
+              <Text className="text-sm font-semibold text-indigo-600">
                 See All
               </Text>
             </TouchableOpacity>
           </View>
 
           <FlatList
-            data={mockProducts}
+            data={featuredProducts}
             renderItem={renderFeaturedProduct}
             keyExtractor={(item) => item.id}
             horizontal

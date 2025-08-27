@@ -1,5 +1,5 @@
 import { Product } from "@/store/useStore";
-
+// data/mockProducts.ts
 export const mockProducts: Product[] = [
   {
     id: '1',
