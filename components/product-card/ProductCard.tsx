@@ -52,12 +52,12 @@ export default function ProductCard({
                 {/* Condition Badge */}
                 <View
                     className={`absolute top-2 right-2 px-2 py-0.5 rounded ${product.condition === 'new'
-                            ? 'bg-emerald-500'
-                            : product.condition === 'used'
-                                ? 'bg-amber-500'
-                                : product.condition === 'refurbished'
-                                    ? 'bg-blue-500'
-                                    : 'bg-gray-500'
+                        ? 'bg-emerald-500'
+                        : product.condition === 'used'
+                            ? 'bg-amber-500'
+                            : product.condition === 'refurbished'
+                                ? 'bg-blue-500'
+                                : 'bg-gray-500'
                         }`}
                 >
                     <Text className="text-white text-[10px] font-semibold">

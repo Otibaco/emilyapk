@@ -1,3 +1,4 @@
+// CategoryList.ts
 import { categories } from "./categories";
 
 export interface CategoryListItem {
@@ -6,6 +7,7 @@ export interface CategoryListItem {
   description: string;
   image: string;
   href: string;
+  slug?: string;
 }
 
 // Flatten categories into a simple array
@@ -15,4 +17,5 @@ export const CategoryList: CategoryListItem[] = categories.map((cat) => ({
   description: cat.description,
   image: cat.image,
   href: cat.href,
+  slug: cat.slug,
 }));
