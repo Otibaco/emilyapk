@@ -112,11 +112,11 @@ export default function ProductCard({
             {/* Action Buttons */}
             <View className="flex-row px-3 pb-3 pt-0 space-x-2">
                 <TouchableOpacity
-                    className="flex-1 py-2 rounded-md bg-gray-100 border border-gray-300 items-center justify-center"
+                    className="flex-1 py-2 rounded-md bg-green-600 border border-gray-300 items-center justify-center"
                     onPress={() => onViewDetails(product)}
                     activeOpacity={0.8}
                 >
-                    <Text className="text-gray-700 text-xs font-semibold">
+                    <Text className="text-white  text-xs font-semibold">
                         View Details
                     </Text>
                 </TouchableOpacity>
