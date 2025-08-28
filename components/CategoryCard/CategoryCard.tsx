@@ -25,13 +25,13 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
 
   const router = useRouter();
-
+  console.log("CategoryCard slug:", slug);
   return (
     <TouchableOpacity
       className="flex-1 m-2 rounded-xl overflow-hidden h-52 p-2 bg-gray-200"
       activeOpacity={0.85}
       onPress={() => router.push(`/category/${slug}`)}  // ✅ navigate on press
-      // onPress={() => router.push(`${href}`)}  // ✅ navigate on press
+    // onPress={() => router.push(`${href}`)}  // ✅ navigate on press
     >
       <ImageBackground
         source={{ uri: image.startsWith('/') ? image : `/${image}` }}
